@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import 'bootstrap/dist/css/bootstrap.min.css'
+import InstallPrompt from "@/components/InstallPrompt";
 
 
 const geistSans = Geist({
@@ -25,8 +26,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" data-theme="system">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <InstallPrompt />
         {children}
       </body>
     </html>
